@@ -3,7 +3,7 @@ var config = require('./config.js');
 
 var Twitter = new twit(config);
 
-var retweet = function () {
+var retweetAndFavorite = function () {
   var params = {
     q: '#codeWithPride',
     result_type: 'recent',
@@ -26,6 +26,16 @@ var retweet = function () {
           console.log('Something went wrong while RETWEETING... Duplication maybe...');
         }
       });
+
+      Twitter.post('favorites/create', { id: retweetId }, function (err, response) {
+        // if there was an error while 'favorite'
+        if (err) {
+          console.log('CANNOT BE FAVORITE... Error');
+        }
+        else {
+          console.log('FAVORITED... Success!!!');
+        }
+      });
     }
     // if unable to Search a tweet
     else {
@@ -35,4 +45,5 @@ var retweet = function () {
 };
 // rewtweet every hour
 // ms * sec * mins
-setInterval(retweet, 1000 * 60 * 60);
+// setInterval(retweetAndFavorite, 1000 * 60 * 60);
+retweetAndFavorite();
