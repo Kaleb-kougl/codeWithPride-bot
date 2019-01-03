@@ -45,5 +45,4 @@ var retweetAndFavorite = function () {
 };
 // rewtweet every hour
 // ms * sec * mins
-// setInterval(retweetAndFavorite, 1000 * 60 * 60);
-retweetAndFavorite();
+setInterval(retweetAndFavorite, 1000 * 60 * 60);
