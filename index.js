@@ -43,6 +43,7 @@ var retweetAndFavorite = function () {
     }
   });
 };
+
 // rewtweet every hour
 // ms * sec * mins
 retweetAndFavorite();
