@@ -46,7 +46,7 @@ var retweetAndFavorite = function () {
 
 // rewtweet every hour
 // ms * sec * mins
-retweetAndFavorite();
-setInterval(retweetAndFavorite, 1000 * 60 * 29);
+// retweetAndFavorite();
+setInterval(retweetAndFavorite(), 1000 * 60 * 29);
 
 // test
